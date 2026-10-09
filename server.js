@@ -8,6 +8,7 @@ const helmet = require('helmet');
 const path = require('path');
 
 const app = express();
+app.use(express.static('public'));
 const PORT = Number(process.env.PORT || 3000);
 const db = new Database(path.join(__dirname, 'rafin.sqlite'));
 db.pragma('journal_mode = WAL');
